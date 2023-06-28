@@ -175,7 +175,8 @@
     {
         name : 'dx8footerColor',
         label : '@@ubuilder.footerColor@@',
-        type : 'color'
+        type : 'color',
+        value : '#5C5C5C'
     }]
 },
 {

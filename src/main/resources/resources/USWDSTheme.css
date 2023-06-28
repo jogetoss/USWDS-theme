@@ -50,7 +50,6 @@ header.navbar {
 }
 #sidebar .nav li {
     border-top: 1px solid #e6e6e6;
-    padding: 4px 4px;
 }
 #sidebar .nav > li.active:after {
     background-color: var(--theme-sidebar-badge, var(--theme-color5, #90a6b9));
@@ -165,21 +164,33 @@ select, textarea{
 .form-container{
     font-size: 1.06rem;
 }
-input:focus, select:focus, textarea:focus, button:focus, a:focus{
+input:focus, select:focus, textarea:focus, button:focus, a:focus, label:focus, .dropzone.dz-clickable:focus, .accordion .card-body:focus{
     outline: .25rem solid #2491ff !important;
 }
-button:focus, input[class*=button]{   
+.AccordionComponent button:focus, .accordion .card-body:focus{
+    outline-offset: -0.3rem;
+}
+button:focus, input[class*=button], .btn:focus{   
     outline-offset: .25rem;
 }
 body.horizontal_menu #sidebar .nav li a:focus{
     outline-offset: .05rem !important;
 }
+#sidebar .nav li a:focus{
+    outline-offset: -0.3rem !important;
+}
+#sidebar .nav > li > ul > li > a:focus{
+    outline-offset: -0.01rem !important;
+}
+.btn:focus{
+    box-shadow: none !important;
+}
 .form-cell-value > label > input, 
 .subform-cell-value > label > input,
 td.select_checkbox input[type=checkbox],
-td.select_checkbox input[type=radio], 
+td.select_radio input[type=radio], 
 th.select_checkbox input[type=checkbox], 
-th.select_checkbox input[type=radio]{
+th.select_radio input[type=radio]{
     outline-offset: .15rem !important;
 }
 #content main button[class*=button], #content main input[class*=button]{
@@ -293,7 +304,10 @@ body:not(.embeded) .Sql_Chart_Menu{
 body .grid-stack-item-body .Sql_Chart_Menu{
     border: 0px solid !important;
 }
-td.select_checkbox input[type=checkbox], td.select_checkbox input[type=radio], th.select_checkbox input[type=checkbox], th.select_checkbox input[type=radio]{
+td.select_checkbox input[type=checkbox], 
+td.select_radio input[type=radio], 
+th.select_checkbox input[type=checkbox], 
+th.select_radio input[type=radio]{
     width: 20px;
     height: 20px;
     margin-top: 7px;
@@ -572,6 +586,9 @@ body#login #loginForm table td input[type='submit'] {
     background-image: none !important;
     webkit-animation: none !important;
     animation: none !important;
+}
+.accordion>.card>.card-header {
+    color: var(--theme-link, var(--theme-color4, #007bff));
 }
 @media (min-width: 1280px){
     #content.page_content {
