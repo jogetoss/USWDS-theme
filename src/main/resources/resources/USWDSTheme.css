@@ -180,7 +180,7 @@ body.horizontal_menu #sidebar .nav li a:focus{
     outline-offset: -0.3rem !important;
 }
 #sidebar .nav > li > ul > li > a:focus{
-    outline-offset: -0.01rem !important;
+    outline-offset: -0.5rem !important;
 }
 .btn:focus{
     box-shadow: none !important;
@@ -590,12 +590,18 @@ body#login #loginForm table td input[type='submit'] {
 .accordion>.card>.card-header {
     color: var(--theme-link, var(--theme-color4, #007bff));
 }
+.grid .pg-navigator{
+    padding: 15px 0;
+}
+.grid.adgrid .pq-header-outer {
+    height: 30px !important;
+}
 @media (min-width: 1280px){
     #content.page_content {
         padding: 105px 32px 20px 32px;
     }
     body:not(.horizontal_menu) #navigation {
-        background-color: #fff;
+        background-color: var(--theme-sidebar-link-bg, transparent);
     }
     footer {
         background: transparent;
@@ -641,7 +647,7 @@ body#login #loginForm table td input[type='submit'] {
     body.horizontal_menu #sidebar li:hover > ul, 
     body.horizontal_menu #sidebar .nav > li.toggled > ul.focusVisible, 
     body.horizontal_menu #sidebar li > ul.focusVisible {
-        top: 58px;
+        top: 50px;
         padding: 5px !important;
     }
     body.horizontal_menu #sidebar .nav > li:not(.active) > a:hover, 
@@ -682,4 +688,44 @@ body#login #loginForm table td input[type='submit'] {
     body.horizontal_menu #sidebar .nav > li > a:hover > span:not(.badge), body.horizontal_menu #sidebar .nav > li > a:hover > span:not(.badge) > i{
         color: var(--theme-sidebar-badge, var(--theme-color5, #90a6b9));
     }
+}
+
+body.dark-mode input:focus, body.dark-mode select:focus, body.dark-mode textarea:focus {
+    outline: .3rem solid #2491ff !important;
+}
+body.dark-mode .pad, body.dark-mode .ql-toolbar.ql-snow, body.dark-mode .ql-container.ql-snow, 
+body.dark-mode .chosen-container-multi .chosen-choices, body.dark-mode .selector_element, body.dark-mode .tox-tinymce{
+    border: 1px solid var(--theme-border-color) !important;
+}
+
+body.dark-mode input[type=checkbox]:before, body.dark-mode input[type=radio]:before {
+    width: 20px;
+    height: 20px;
+}
+body.dark-mode input[type=checkbox]:checked::after, body.dark-mode input[type=radio]:checked::after {
+    width: 6px;
+    height: 12px;
+    top: -17px;
+    left: 7px;
+}
+body.dark-mode input[type=radio]:checked::after {
+    border: 5px solid var(--theme-font-color);
+    top: -15px;
+    left: 5px;
+    height: 10px;
+}
+body.dark-mode .dataList:not(.size_sm) th, body.dark-mode .dataList:not(.size_sm) td {
+    border-color: var(--theme-border-color) !important;
+}
+body#login.dark-mode #loginForm {
+    background-color: var(--theme-background);
+}
+body.dark-mode .userProfile-body-content {
+    border-color: var(--theme-border-color);
+}
+body.dark-mode form.form fieldset {
+    border: 0px;
+}
+body:not(.embeded).dark-mode .Sql_Chart_Menu {
+    border-color: var(--theme-border-color) !important;
 }

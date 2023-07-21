@@ -31,16 +31,6 @@ public class USWDSTheme extends AjaxUniversalTheme{
     }
     
     @Override
-    protected String generateLessCss() {
-        String css = super.generateLessCss();
-        String newcss = AppUtil.readPluginResource(getClass().getName(), "resources/USWDSTheme.css", null, true, null);
-
-        newcss += css ;
-        
-        return newcss;
-    }
-    
-    @Override
     public String getPropertyOptions() {
         return AppUtil.readPluginResource(getClass().getName(), "/properties/dx8USWDSTheme.json", null, true, null);
     }
@@ -65,7 +55,9 @@ public class USWDSTheme extends AjaxUniversalTheme{
             jsCssLink += "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n";
             jsCssLink += "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n";
             jsCssLink += "<link href=\"https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap\" rel=\"stylesheet\">";
-
+            if ("true".equals(getPropertyString("darkMode"))) {
+                jsCssLink += "<link rel=\"stylesheet\" href=\"" + data.get("context_path") + "/plugin/" + getClassName() + "/USWDSTheme.css\"></link>\n";
+            }
             return jsCssLink;
         }
     }
